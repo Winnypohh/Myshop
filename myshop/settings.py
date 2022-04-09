@@ -26,7 +26,7 @@ SECRET_KEY = '-d01jf_m*0m4$3d!#p#m17_f#ppraa*9c@p&*w9&7a2kk3v0z+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -176,6 +176,6 @@ FREE_DELIVERY_THRESHOLD = 50
 STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = 'usd'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
-STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', 'sk_test_51Kk1gLFi99xDV1AtMV7zGXVYqYWKXSWaOuOYIp8oEjzXUiIbx9w2DAl6EXo15xDfV8ujRyZ5SwT1YujJRhNQkU4C00OrzP6to0')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
