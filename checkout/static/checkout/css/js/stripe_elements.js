@@ -17,15 +17,15 @@ var style = {
         fontSmoothing: 'antialiased',
         fontSize: '16px',
         '::placeholder': {
-            color: '#aab7c4'
+            color: '#aab7c4',
         }
     },
     invalid: {
         color: '#dc3545',
-        iconColor: '#dc3545'
+        iconColor: '#dc3545',
     }
 };
-var card = elements.create('card', {style: style});
+var card = elements.create('card', {'style': style});
 card.mount('#card-element');
 
 // Handle realtime validation errors on the card element
