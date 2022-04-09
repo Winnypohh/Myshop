@@ -100,6 +100,7 @@ snowballstemmer==2.2.0
 sqlparse==0.3.0
 stack-data==0.2.0
 stevedore==3.5.0
+stripe==2.71.0
 terminado==0.13.2
 testpath==0.6.0
 toml==0.10.2
