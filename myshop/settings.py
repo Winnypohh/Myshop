@@ -27,7 +27,7 @@ SECRET_KEY = '-d01jf_m*0m4$3d!#p#m17_f#ppraa*9c@p&*w9&7a2kk3v0z+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['minupood.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -122,16 +122,17 @@ WSGI_APPLICATION = 'myshop.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
-
-# DATABASES = {
-   # 'default': dj_database_url.parse('postgres://yosdmwwazdqvsq:5987a027fecca02802738cf41bc5df5f6f71812cfc2bc82e75dbcc0a7448acd8@ec2-52-48-159-67.eu-west-1.compute.amazonaws.com:5432/dbfm48vlobigss')
-# }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 
 # Password validation
